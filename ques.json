@@ -1,0 +1,62 @@
+[
+    {
+      "id": 1,
+      "question": "Which planet is farthest from the Sun?",
+      "options": ["Jupiter", "Neptune", "Saturn", "Earth"],
+      "answerIndex": 2
+    },
+    {
+      "id": 2,
+      "question": "Which planet is tilted on its side, making its rotation unique?",
+      "options": ["Neptune", "Jupiter", "Uranus", "Saturn"],
+      "answerIndex": 3
+    },
+    {
+      "id": 3,
+      "question": "Which planet has the shortest day (spins fastest)?",
+      "options": ["Jupiter", "Saturn", "Earth", "Neptune"],
+      "answerIndex": 1
+    },
+    {
+      "id": 4,
+      "question": "What is the name of Earth's natural satellite?",
+      "options": ["Phobos", "Titan", "The Moon", "Europa"],
+      "answerIndex": 3
+    },
+    {
+      "id": 5,
+      "question": "Which planet is known as the “Morning Star” or “Evening Star”?",
+      "options": ["Venus", "Mercury", "Uranus", "Jupiter"],
+      "answerIndex": 1
+    },
+    {
+      "id": 6,
+      "question": "Which planet has the most rings?",
+      "options": ["Mars", "Saturn", "Uranus", "Jupiter"],
+      "answerIndex": 2
+    },
+    {
+      "id": 7,
+      "question": "Which planet is known as the “Morning Star” or “Evening Star”?",
+      "options": ["Venus", "Mercury", "Uranus", "Jupiter"],
+      "answerIndex": 1
+    },
+    {
+      "id": 8,
+      "question": "What is the largest planet in our solar system?",
+      "options": ["Venus", "Mercury", "Uranus", "Jupiter"],
+      "answerIndex": 4
+    },
+    {
+      "id": 9,
+      "question": "Which planet is known as the Red Planet?",
+      "options": ["Venus", "Mercury", "Mars", "Jupiter"],
+      "answerIndex": 3
+    },
+    {
+      "id": 10,
+      "question": "Which planet is closest to the Sun?",
+      "options": ["Venus", "Mercury", "Uranus", "Jupiter"],
+      "answerIndex": 2
+    }    
+]

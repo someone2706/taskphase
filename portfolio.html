@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@500&family=Lora:ital,wght@0,600;1,600&family=Montserrat:ital,wght@0,700;1,700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!--<link ref="stylesheet" href="stylep.css">-->
+    <style>
+
+        body {
+            background-color: #49243E; 
+            color: azure; 
+            transition: background-color 0.3s, color 0.3s; 
+        }
+
+        .main_title {
+            background-color: #DBAFA0;
+        }
+
+        .title { 
+            background-color: #BB8493;
+        }
+        
+        body.dark-mode {
+            background-color: #222831; 
+            color: white; 
+        }
+
+        body.dark-mode .main_title {
+            background-color: #948979;
+        }
+
+        body.dark-mode .app_info, 
+        body.dark-mode .web_info {
+            box-shadow: 0 0 5px whitesmoke;
+        }
+
+        body.dark-mode .title {
+            background-color: #393E46; 
+            border: 0.5px solid azure;
+        }
+
+        body.dark-mode #icon:hover,
+        body.dark-mode .lnk:hover{
+            background-color: rgb(235, 225, 225);
+            height: fit-content;
+            width: auto;
+            box-shadow: 0 0 5px #BB8493;
+            color:#393E46;
+        }
+
+        body.dark-mode .nav:hover{
+            background-color: whitesmoke;
+            height: fit-content;
+            width: auto;
+            text-align: center;
+            box-shadow: 0 0 5px whitesmoke;
+            color:#393E46;
+        }
+
+        .main_title{
+            text-align: left;
+            background-color: #DBAFA0;
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
+            font-size: larger;
+            padding-top: 10px;
+            padding-left: 10px;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+        }
+
+        .heading{
+            width: 50%;
+            font-size: xx-large;
+            text-align: left;
+            padding: 5px 5px 5px 5px;
+            color: black;
+        }
+
+        .subheading{
+            display: flex;
+            flex:1;
+            column-gap: 100px;
+            flex-direction: row;
+        }
+
+        .nav{
+            color: black;
+        }
+
+        .container{
+            display: flex;
+            margin-top: 50px;
+        }
+
+        .info{
+            text-align: justify;
+            padding-left: 2%;
+            padding-right: 2%;
+            font-style: italic;
+            display: inline-block;
+            color:azure;
+            font-family: "Roboto Condensed", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;  
+            flex:1;
+        }
+
+        .abt{
+            height: fit-content;
+            width: 670px;
+            overflow: auto;
+            display: inline-block;
+            border-radius: 10px;
+            padding: 5px 5px 5px 5px;
+            margin-top: 15px;
+        }
+
+        .ski, .int{
+            height: 150px;
+            vertical-align: top;
+            width: 200px;
+            margin-top: 10px;     
+            padding: 5px 5px 5px 5px;
+            border-radius: 10px;
+        }
+
+        .title{
+            text-align: left;
+            font-family: "Lora", serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+            font-size: x-large;
+            background-color:#BB8493; 
+            width: 115px;
+            height: 33px;
+            text-align: center;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .pfp{
+            border-radius: 315px;
+            object-fit: cover;
+            object-position: center;
+            box-shadow: 0 0 5px whitesmoke;
+        }
+
+        .name{
+            display: block;
+            width: 750px;
+            text-align: center;
+            color:azure;
+            font-family: "Roboto Condensed", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: xx-large;
+        }
+
+        .pic{
+            height: 300px;
+            display: inline-block;
+            vertical-align:text-bottom;
+            text-align: center;
+            width: 50%;
+        }
+
+        .info{
+            display: inline-block;
+            margin-top: 5px;
+            font-size: large;
+        }
+
+        .contact{
+            display: flex;
+            flex: 1;
+            flex-direction: row;
+            column-gap: 30px;
+            padding-left: 20px;
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
+            font-size: medium;
+            color: black;
+            margin-bottom: 10px;
+            justify-content: center;
+        }
+
+        a{
+            color: black;
+            text-decoration: none;
+        }
+
+        #icon{
+            color: azure;
+        }
+
+        #icon:hover, .lnk:hover{
+            background-color: rgb(235, 225, 225);
+            height: fit-content;
+            width: auto;
+            box-shadow: 0 0 5px #BB8493;
+            color:#49243E;
+        }
+
+        .nav:hover{
+            background-color: whitesmoke;
+            height: fit-content;
+            width: auto;
+            text-align: center;
+            box-shadow: 0 0 5px whitesmoke;
+            color:#49243E;
+
+        }
+
+        .prj{
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
+            font-size: larger;
+            padding-top: 10px;
+            padding-left: 10px;
+            color: azure;
+            width: 100%;
+        }
+
+        .web_info, .app_info{
+            color:azure;
+            font-family: "Roboto Condensed", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal; 
+            font-size: large;
+            /*border:1px solid azure;*/
+            margin-right: 10px;
+            padding: 50px 50px 50px 50px;
+            border-radius: 5px;
+            text-align: justify;
+            }
+
+        .app{
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            column-gap: 10px;
+            margin-top: 5px;
+        }
+
+        .resto{
+            display: grid;
+            grid-template-columns: 500px 1fr;
+            column-gap: 10px;
+            margin-top: 20px;
+        }
+
+        .resto_pic{
+            width:500px;
+            height:300px;
+        }
+
+        .app_pic{
+            width:300px;
+            height:300px;
+        }
+
+        #btn{
+            background-color: rgb(70, 67, 67);
+            border-radius: 50px;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            border-color: 1px solid black;
+            color: azure;
+            font-size: 25px;
+            align-items: center;
+        }
+
+        @media (min-width:991px) and (max-width:1200px) {
+            .main_title{
+                grid-template-columns: 1fr;
+            }
+
+            .container{
+                flex-direction: column;
+                gap:100px;
+            }
+
+            .abt{
+                height: fit-content;
+                width: 100%;
+                font-size: small;
+            }
+
+            .int, .prj, .ski{
+                width: 100%;
+                font-size: small;
+                text-align: center;
+            }
+
+            .name, .pic{
+                width: 100%;
+                font-size: large;
+                text-align: center;
+            }
+
+            .prj_title, .app_title{
+                font-size: large;
+            }
+
+            .resto, .app{
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width:768px) and (max-width:991px){
+
+            .main_title{
+                grid-template-columns: 1fr;
+            }
+
+            .container{
+                flex-direction: column;
+                gap:100px;
+            }
+
+            .abt{
+                height: fit-content;
+                width: 100%;
+                font-size: small;
+            }
+
+            .int, .prj, .ski{
+                width: 100%;
+                font-size: small;
+                text-align: center;
+            }
+
+            .name, .pic{
+                width: 100%;
+                font-size: large;
+                text-align: center;
+            }
+
+            .contact{
+                column-gap: 10px;
+            }
+
+            li{
+                font-size: large;
+            }
+
+            .app, .resto{
+                display: grid;
+                grid-template-columns: 1fr;
+                row-gap: 10px;
+                justify-items: center;
+            }
+
+            .resto_pic, .app_pic{
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+            }
+
+            .app_info, .web_info{
+                width: 100%;
+                height: auto;
+                text-align: justify;
+                padding: 5px 5px 5px 5px;
+            }
+
+            .prjts{
+                flex-direction: column;
+                gap: 50px;
+            }
+
+        }
+
+        @media  (max-width:768px){
+
+            .main_title{
+                grid-template-columns: 1fr;
+                font-size: medium;
+            }
+
+            .heading{
+                font-size: large;
+                padding-left: 5px;
+                margin-left: 5px;
+            }
+
+            .subheading{
+                grid-template-columns: 1fr;
+                column-gap: 10px;
+            } 
+
+            .container{
+                flex-direction: column;
+                gap:100px;
+                justify-content: center;
+            }
+
+            .abt{
+                height: fit-content;
+                width: 100%;
+                font-size: small;
+            }
+
+            .int, .prj, .ski{
+                width: 100%;
+                font-size: medium;
+            }
+
+            .name, .pic{
+                width: 100%;
+                font-size: medium;
+                text-align: center;
+            }
+            
+            .contact{
+                column-gap: 10px;
+            }
+
+            li{
+                font-size: large;
+            }
+
+            .app, .resto{
+                display: grid;
+                grid-template-columns: 1fr;
+                row-gap: 15px;
+                justify-items: center;
+            }  
+
+            .resto_pic, .app_pic{
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+            }
+
+            .prjts{
+                flex-direction: column;
+                gap: 80px;
+            }
+
+            .app_info, .web_info{
+                width: 100%;
+                height: auto;
+                text-align: justify;
+                padding: 5px 5px 5px 5px;
+            }
+        }
+        
+    </style>
+
+</head>
+
+<body class="darkmode">
+    <!--<script src="java.js">-->
+    <script> 
+
+    document.addEventListener("DOMContentLoaded", () => {
+    
+        const el = document.getElementById("intro");
+        const text = el.textContent.trim();
+        el.textContent = "";
+        let i = 0;
+
+        function type() {
+            if (i < text.length) {
+                el.textContent += text.charAt(i);
+                i++;
+                setTimeout(type, 80);
+            }
+        }
+
+        const btn = document.getElementById("btn");
+        const body = document.body;
+
+        btn.addEventListener("click", () => {
+            body.classList.toggle('dark-mode');
+            
+            const isDarkMode = body.classList.contains('dark-mode');
+            btn.textContent = isDarkMode ? '☀️' : '🌙';
+            
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+        });
+
+        const boxshadow = "0 0 10px azure";
+        const about = document.querySelector(".abt");
+        const element = document.querySelector(".int");
+        const ele = document.querySelector(".ski");
+        const ainfo = document.getElementById("ainfo");
+        const winfo = document.getElementById("winfo");
+        
+        if (about){
+            about.addEventListener("mouseover", () =>{
+                about.style.boxShadow = boxshadow;
+                about.style.transition = "box-shadow 0.3s ease-in-out";
+            })
+        }
+
+        if (element){
+            element.addEventListener("mouseover", () =>{
+                element.style.boxShadow = boxshadow;
+                element.style.transition = "box-shadow 0.3s ease-in-out";
+            })
+        }
+
+        if (ele){
+            ele.addEventListener("mouseover", () =>{
+                ele.style.boxShadow = boxshadow;
+                ele.style.transition = "box-shadow 0.3s ease-in-out";
+            })
+        }
+
+        winfo.addEventListener("mouseover", () =>{
+            winfo.style.boxShadow = "0 0 15px whitesmoke";
+            winfo.style.borderRadius = "50px";
+            winfo.style.transition = "box-shadow 0.3s ease-in-out";
+        })
+
+        ainfo.addEventListener("mouseover", () =>{
+            ainfo.style.boxShadow = "0 0 15px whitesmoke";
+            ainfo.style.borderRadius = "50px";
+            ainfo.style.transition = "box-shadow 0.3s ease-in-out";
+        })
+        
+        if (about){
+            about.addEventListener("mouseout", () =>{
+                about.style.boxShadow = "none";
+            })
+        }
+
+        if (element){
+            element.addEventListener("mouseout", () =>{
+                element.style.boxShadow = "none";
+            })
+        }
+
+        if (ele){
+            ele.addEventListener("mouseout", () =>{
+                ele.style.boxShadow = "none";
+            })
+        }
+
+        winfo.addEventListener("mouseout", () =>{
+            winfo.style.boxShadow = "none";
+        })
+
+        ainfo.addEventListener("mouseout", () =>{
+            ainfo.style.boxShadow = "none";
+        })
+
+        type();
+    });
+
+    </script>
+
+    <header class="main_title" id="maintitle">
+        <div class="heading">PORTFOLIO</div>
+        <div class="subheading">
+            <a href="#About"><p class="nav">About</p></a>
+            <a href="#Skills"><p class="nav">Skills</p></a>
+            <a href="#Projects"><p class="nav">Projects</p></a>
+            <a href="#Interests"><p class="nav">Interests</p></a>
+            <hr>
+            <button id="btn">🌙</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container" >
+            <div class="pic">
+                <div class="name" ><p id="intro">Hey! I'm Nyasha, a beginner web developer in the learning!</p>
+                    <img class ="pfp" src="pfp.webp"  width="250px" height="250px">
+                    <div class="contact">
+                        <p><a href="https://www.linkedin.com/in/nyasha-singh/>" target="_blank" ><i class="fab fa-linkedin" id="icon"></i></a></p>
+                        <p><a href="mailto:nyashasingh.27@gmail.com" target="_blank"><i class="fas fa-envelope" id="icon"></i></a></p>
+                        <p><a href="https://github.com/someone2706" target="_blank"><i class="fab fa-github" id="icon"></i></a></p>
+                    </div>
+                    <p style="font-size: medium; padding-top: 0px;" >Phone number: +91 1234567809</p> 
+                </div> 
+            </div>
+            <div class="info">
+                <div class="abt">
+                <div class="title" id="About">About Me</div>
+                    <div style="font-size: medium;"><p>I am a 2nd-year BTech student studying VLSI engineering at Manipal Institute of Technology, Manipal, with a strong interest in technology, programming, and astronomy. Currently, I am enhancing my technical skills on Python programming, which complements my academic journey in chip design and electronic systems.
+                    During my school years, I actively participated in various sports, including basketball, volleyball, athletics, and marathons. I was also a member of the Cultural club and participated in various dance events driven by my passion for performance. These experiences shaped my ability to work in teams, stay disciplined, and approach challenges with determination.
+                    I am exploring career opportunities that align with my academic strengths and personal interests, whether in VLSI technology, astronomical research, or innovative fields that bridge the two.
+                    </p></div>
+                </div>
+                <div style="
+                display: grid;
+                grid-template-columns: repeat(2,1fr); " >
+                    <div class="ski">
+                        <div class="title" id="Skills">Skills</div>
+                            <div style="
+                            display: grid;
+                            grid-template-columns:repeat1fr; margin-top: 3px; row-gap: 3px;">
+                            <ul>
+                                <li>Python <i class="fa-brands fa-python"></i></li> 
+                                <li>C coding <i class="fa-solid fa-c"></i></li>
+                                <li>HTML <i class="fa-brands fa-html5" ></i></li></i>
+                                <li>CSS <i class="fa-brands fa-css3-alt"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="int">
+                        <div class="title" id="Interests">Interests</div>
+                        <ul>
+                            <li>Web Development</li>
+                            <li>Generative AI</li>
+                            <li>Astronomy</li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div> 
+        </div>
+
+        <div class="prj">
+            <div class="title" id="Projects">Projects</div>
+            <ol>
+                <div style="display: flex;
+                flex-direction: column;" class="prjts">
+                <li class="app_title">Weather App</li>
+                    <div class="app">
+
+                        <div style="text-align: center; margin-top: 10px;">
+                            <img src="app1.png" class="app_pic">
+                        </div>
+                        <div class="app_info" style="height: auto;" id="ainfo">
+                            <p>
+                                This is a desktop application built with Python (PyQt5) that allows users to check real-time weather conditions for any city. 
+                                It connects to the OpenWeather API to fetch temperature, weather description, and displays a matching emoji icon for easy visualization. 
+                                The app includes error handling for invalid inputs or connection issues and features a clean, user-friendly interface.
+                            </p>
+                            <p>Here's a link to test my small project:  <a href="Weather API app.exe" download class="lnk">Weather app</a></p>
+                        </div>
+                    </div>
+                    <li class="prj_title">Static restaurant Website</li>
+                    <div class="resto">
+
+                    
+                    <div style="text-align: center; margin-top: 10px;">
+                        <img src="restp.png" class="resto_pic">
+                    </div>
+                    <div class="web_info" style="height:auto;" id="winfo">
+                        <p>
+                            I built a responsive, static website for a restaurant called David Chu China Bistro as one of my web development projects. 
+                            The site is designed using HTML and CSS with a clean layout that highlights the restaurant's branding, menu, and contact information. 
+                            It mimics a real-world business website and focuses on user-friendly navigation and mobile responsiveness. Through this project, 
+                            I practiced structuring pages with semantic HTML, organizing content into sections, and styling with modern CSS techniques.
+                        </p>
+                        <p>Here's a link to my Website: <a href="coursera/index.html" class="lnk" >Restaurant website</a></p>
+                    </div>
+                    </div>
+                </div>
+            </ol>    
+        </div>
+
+    </main>
+    
+</body>
+</html>

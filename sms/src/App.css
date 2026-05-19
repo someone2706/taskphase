@@ -1,0 +1,594 @@
+/* ================= BASE ================= */
+html, body {
+  width: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background: papayawhip;
+}
+
+/* ================= NAVBAR ================= */
+nav {
+  width: 100vw;
+  height: 70px;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.logo {
+  height: 45px;
+  margin-right: 15px;
+}
+
+.main {
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: 0.3s;
+}
+
+.main:hover {
+  opacity: 0.85;
+}
+
+/* ================= PAGE BASE ================= */
+.page {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding-top: 70px;
+}
+
+.page h1 {
+  margin-top: 40px;
+  color: #333;
+  font-size: xx-large;
+  font-weight: 700;
+}
+
+.page h2 {
+  color: #333;
+  font-size: large;
+  margin-bottom: 15px;
+}
+
+.page h3 {
+  margin-top: 10px;
+  color: #ff5555;
+  font-weight: 500;
+}
+
+.page a {
+  display: inline-block;
+  margin-top: 12px;
+  margin-bottom: 10px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: larger;
+  transition: 0.3s;
+}
+
+.page a:hover {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+/* ================= LOGIN / REGISTER ================= */
+.logincontainer,
+.registration {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px 45px;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  margin: 25px 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.logincontainer h1,
+.registration h1 {
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 1.9rem;
+  font-weight: 600;
+}
+
+label {
+  display: block;
+  margin: 10px 0 6px;
+  font-weight: 500;
+  color: #333;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 10px rgba(102,126,234,0.3);
+}
+
+button.login,
+button.register {
+  width: 100px;
+  padding: 14px 0;
+  border: none;
+  border-radius: 15px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+button.login:hover,
+button.register:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+  opacity: 0.95;
+}
+
+/* ================= CHOOSE USER ================= */
+.choose-user {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.user-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user-card img {
+  height: 100px;
+  width: 100px;
+  margin-bottom: 15px;
+}
+
+.user-card a {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.user-card a:hover {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+/* ================= DASHBOARD ================= */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  padding-top: 70px; /* navbar offset */
+  background: #f4f6f9;
+}
+
+.sidebar {
+  width: 240px;
+  min-height: calc(100vh - 70px);
+  background: #fff;
+  padding: 25px;
+  box-shadow: 2px 0 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+.sidebar h3 {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: #4facfe;
+  font-weight: 600;
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  flex: 1;
+}
+
+.sidebar ul li {
+  margin-bottom: 12px;
+  border-radius: 8px;
+}
+
+.sidebar ul li a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+}
+
+.sidebar ul li a:hover {
+  background-color: #e6f7ff;
+  color: #4facfe;
+  transform: translateX(3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.logout-btn {
+  margin-top: auto;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  background: #ff6b6b;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 0px;
+}
+
+.logout-btn:hover {
+  background: #ff4b4b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* ================= DASHBOARD MAIN ================= */
+.dashboard-main {
+  flex: 1;
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-header h2 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.dashboard-header .subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* ================= STATS CARDS ================= */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  color: #2f6ca1;
+  text-decoration: none;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+  text-decoration: underline;
+}
+
+.stat-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.stat-card p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ================= DASHBOARD CONTENT ================= */
+.dashboard-content {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+/* ================= ATTENDANCE TABLE ================= */
+.attendance-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.attendance-table th,
+.attendance-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.attendance-table th {
+  background: #4facfe;
+  color: #fff;
+}
+
+.attendance-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.attendance-table tr:hover {
+  background: #e6f7ff;
+}
+
+/* Add subtle hover effect on checkbox */
+.attendance-table input[type="checkbox"] {
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: all 0.2s ease;
+}
+
+/* ================= ASSIGNMENTS & ANNOUNCEMENTS ================= */
+.normal h1, .normal h2 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.normal input, .normal textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.normal button {
+  padding: 8px 15px;
+  border-radius: 8px;
+  background: #4facfe;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.normal button:hover {
+  background: #00f2fe;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.normal ul li {
+  background: #f9f9f9;
+  margin-bottom: 12px;
+  padding: 12px 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .sidebar ul {
+    display: flex;
+    gap: 15px;
+  }
+
+  .dashboard-main {
+    padding: 20px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-main {
+    padding: 15px;
+  }
+
+  .sidebar ul li a {
+    padding: 6px 8px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .attendance-table th,
+  .attendance-table td {
+    font-size: 0.8rem;
+    padding: 8px 10px;
+  }
+
+  .sidebar ul li{
+    height: fit-content;
+    
+  };
+}
+
+.announce-container {
+  max-height: 60vh;   /* 👈 controls box height */
+  overflow-y: auto;    /* 👈 enables vertical scroll */
+  padding-right: 10px; /* optional for scrollbar space */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* Optional styling */
+.announce-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.announce-card {
+  background: #f9f9f9;
+  margin-bottom: 10px;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+/* ================= STUDENT TABLE ================= */
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.student-table th {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  padding: 14px;
+  font-weight: 600;
+  font-size: 0.95rem;
+    border: 1px solid paleturquoise;
+
+}
+
+.student-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95rem;
+  border: 1px solid paleturquoise;
+  border-radius: 10px;
+}
+
+.student-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.student-table tr:hover {
+  background: #e6f7ff;
+  transition: 0.2s ease;
+}
+
+/* Buttons inside table */
+.student-table button {
+  padding: 6px 12px;
+  margin: 2px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: 0.25s ease;
+}
+
+.student-table button:first-child {
+  background: #4facfe;
+  color: white;
+}
+
+.student-table button:first-child:hover {
+  background: #00c6ff;
+}
+
+.student-table button:last-child {
+  background: #ff6b6b;
+  color: white;
+}
+
+.student-table button:last-child:hover {
+  background: #ff4b4b;
+}
+
+/* Form inputs inside table */
+.student-table input {
+  width: 95%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Add button inside table header */
+
+.add-btn {
+  margin-left: 10px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #00c853;
+  color: white;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.add-btn:hover {
+  background: #00a844;
+  transform: translateY(-1px);
+}
